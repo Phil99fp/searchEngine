@@ -18,7 +18,12 @@ Client side
 HTML- Add button and form.
 Add querySelector, eventListeners and fetch functions.
 
+Wins
+Printed all objects.
+
 Challenges
 
 Getting submit input to equal search bar entry.
+
+
 
