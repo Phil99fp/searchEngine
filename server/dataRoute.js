@@ -21,7 +21,7 @@ router.get('/', (req,res)=>{
     res.json(birthMonth)
 })
 
-router.get('/:id', (req, res) => {
+router.get(`/:id`, (req, res) => {
      try {
          let reqMonth = req.params.id
          let matchingMonth = birthMonth.find((month) => month.id.toLowerCase() === reqMonth.toLowerCase());
@@ -32,4 +32,5 @@ router.get('/:id', (req, res) => {
      }
 })
 
-module.exports = router ;
+module.exports = router, birthMonth;
+
