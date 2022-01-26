@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 // const searchData = require('./data.js')
 
-const searchResults = [
+const birthMonth = [
     { id : "january", animal: "ox"},
     { id : "february", animal: "tiger"},
     { id : "march", animal: "rabbit"},
@@ -18,12 +18,18 @@ const searchResults = [
 ];
 
 router.get('/', (req,res)=>{
-    res.json(searchResults)
+    res.json(birthMonth)
 })
 
 router.get('/:id', (req, res) => {
      try {
          let reqMonth = req.params.id
-         if 
+         let matchingMonth = birthMonth.find((month) => month.id.toLowerCase() === reqMonth.toLowerCase());
+         if(!matchingMonth) {throw new Error(`No months called ${reqMonth}`)}
+         res.json(matchingMonth)
+    }catch (err){
+         res.status(404).json({ message: err.message })
+     }
+})
 
 module.exports = router ;

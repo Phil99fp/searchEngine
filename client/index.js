@@ -1,16 +1,29 @@
+// Setup
 
+// SETUP
+const btn1 = document.querySelector('#all');
+const btn2 = document.querySelector('.search');
 
-//index
-
+// Bind event listeners
+btn1.addEventListener('click', getAllAnimals);
+btn2.addEventListener('click', getAnimal);
+// form.addEventListener('submit', submitMonth);
 
 // index
 function getAllAnimals(e) {
+    e.preventDefault()
     fetch('http://localhost:3000/birthMonth')
-      .then(resp => console.log(resp))
-      
-    //   .then (data => console.log(data))
+      .then(resp => resp.text())
       .then(animals => document.getElementById('print').textContent = animals) 
       .catch(console.warn)   
+  }
+
+  function getAnimal(e) {
+    e.preventDefault()
+    fetch('http://localhost:3000/birthMonth/:id')
+      .then(resp => resp.text())
+      .then(animals => document.getElementById('print2').textContent = animals) 
+      .catch(console.warn) 
   }
 
 // create
@@ -24,6 +37,3 @@ function getAllAnimals(e) {
 // }
 
 
-module.exports = {
-    getAllAnimals
-}

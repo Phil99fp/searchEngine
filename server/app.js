@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 })
 
 const dataRoute = require('./dataRoute')
-app.use('/searchResults', dataRoute);
+app.use('/birthMonth', dataRoute);
 
 
 module.exports = {app};
