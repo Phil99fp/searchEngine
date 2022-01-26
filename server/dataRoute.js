@@ -21,9 +21,9 @@ router.get('/', (req,res)=>{
     res.json(searchResults)
 })
 
-// router.get('/:id', (req, res) => {
-//     try {
-//         let reqMonth = req.params.id
-//         if 
+router.get('/:id', (req, res) => {
+     try {
+         let reqMonth = req.params.id
+         if 
 
 module.exports = router ;
